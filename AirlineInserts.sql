@@ -1,0 +1,16 @@
+insert into Airlines values("9E" ,"Endeavor Air Inc.");
+insert into Airlines values("AA" ,"American Airlines Inc.");
+insert into Airlines values("AS" ,"Alaska Airlines Inc.");
+insert into Airlines values("B6" ,"JetBlue Airways");
+insert into Airlines values("DL" ,"Delta Air Lines Inc.");
+insert into Airlines values("EV" ,"ExpressJet Airlines Inc.");
+insert into Airlines values("F9" ,"Frontier Airlines Inc.");
+insert into Airlines values("FL" ,"AirTran Airways Corporation");
+insert into Airlines values("HA" ,"Hawaiian Airlines Inc.");
+insert into Airlines values("MQ" ,"Envoy Air");
+insert into Airlines values("OO" ,"SkyWest Airlines Inc.");
+insert into Airlines values("UA" ,"United Air Lines Inc.");
+insert into Airlines values("US" ,"US Airways Inc.");
+insert into Airlines values("VX" ,"Virgin America");
+insert into Airlines values("WN" ,"Southwest Airlines Co.");
+insert into Airlines values("YV" ,"Mesa Airlines Inc.");
