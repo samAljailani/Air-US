@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html >
+<head >
+<title>AirUs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Icon.png"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./Home.css" />
+<link rel="stylesheet" href="./admin.css" />
+<style>
+#Display_Box{
+display:flex;
+position:static;
+flex-flow: column nowrap;
+width:inherit;
+height:500px;
+align-items: center;
+padding:100px  0;
+}
+.Container_Element{
+display:flex;
+width:100%;
+border-radius: 10px;
+padding: 10px;
+justify-content: space-around;
+align-content:center;
+margin: 100px 0;
+}
+.Container_Name{
+background-color:orangered;
+border-radius: 20px;
+padding: 10px;
+border:transparent;
+color:white;
+text-align:center;
+width:fit-content;
+font-size:20px;
+cursor:pointer;
+
+}
+</style>
+</head>
+
+<div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+    <a href="#" class="w3-bar-item w3-button w3-text-red w3-hover-red" onclick='displayMenu("PopUp_Bg", "block");'><b><img src="Icon.png" style="width:30px; height:auto; margin-right:20px;"" />AirUs</b></a>
+    <a href="#" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a>
+</div>
+
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px;">
+    <div id = "PopUp_Bg">
+        <div id = PopUp_Menu >
+          <div id="Close_PopUp_Menu" onclick='closeWindow("PopUp_Bg");'>
+            <p>X</p> 
+          </div>
+            <ul id="Menu_List">
+              
+              <a href="./index.html"><li >Home</li></a>
+              <a href="#" ><li class="current">Admin</li></a>
+            </ul>
+          
+        </div>
+    </div>
+
+    <img class="w3-image" src="background.jpg" alt="London" style="width:100%; height:700px;">
+    <div class="w3-display-middle">
+
+      <div id="Display_Box" >
+      
+        <h1 >Choose the info you wish to view</h1>
+        <div class="Container_Element" >
+          <button id="Employees"           class="Container_Name" onclick='displayQuery("Employees");'>Employees</button>
+          <button id="Passenger_Info"      class="Container_Name" onclick='displayQuery("Passenger_Info");'>Passenger Info</button>
+          <button id="Airlines"            class="Container_Name" onclick='displayQuery("Airlines");'>Airlines</button>
+          <button id="FlightsPerDay"       class="Container_Name" onclick='displayQuery("FightsPerDay");'>FlightsPerDay</button>
+          <button id="FlightsPerDay"       class="Container_Name" onclick='displayQuery("Planes");'>Planes</button>
+          <button id="FlightsPerDay"       class="Container_Name" onclick='displayQuery("Airports");'>Airports</button>
+          <button id="FlightsPerDay"       class="Container_Name" onclick='displayQuery("Transactions");'>Transactions</button>
+        </div>
+        <img src="./background.jpg" style="visibility: hidden;" alt="background"/>
+    </div>
+    
+</div>
+  
+<!-- <div id="Login_Background">
+    <div id="Login_Window">
+ <div id="Login"  >
+    <div>
+        <label>Username: </label>
+        <input type="text" placeholder="Username" />
+    </div>
+    <div>
+        <label>Password: </label>
+        <input type="password" placeholder="Password"/>
+    </div>
+    <div>
+        <button id="submit" onclick='closeWindow("Login_Background");'>Submit</button>
+    </div>
+  </div> 
+    </div>
+</div>  -->
+<body>
+</header>
+<div id="QueryContent"><!--javascript input--></div>
+<hr style="text-align:center; border-width: 3px"/>
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+<script>
+    // Tabs
+    function openLink(evt, linkName) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("myLink");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < x.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+      }
+      document.getElementById(linkName).style.display = "block";
+      evt.currentTarget.className += " w3-red";
+    }
+    // function displayFlights(){
+    //   //clearing input tags
+    //   clearInputs();
+    //   //displaying single element
+    //   var departure ="New york", destination = "Los Angeles", dept_time = "12:54 pm";
+    //   var arrival_time = "3:00 pm", price="$236", airline = "Delta", duration = "2 hours and 6 minutes";
+    //   var Flight_ID = "165dsfa85";
+    //   document.getElementById("Flights_Header").innerHTML  = '<h3>Available Flights:</h3>';
+    //   document.getElementById("Flight_Elements").innerHTML +='<div class="Flight_Data"><div id="Upper_Section"><div id="Airline"><b>Airline:'+airline+'</b></div><div id="Flight_ID"><b>Flight ID:'+Flight_ID+'</b></div></div><div id="Middle_Section"><div id="Dearture"><b>Departing from:'+departure+' </b></div> <div if="Flight_Icon"><img src="Flight_Icon.png" style="width:300px; height:auto;" /></div><div id="Destination"><b>Destination:'+destination+'</b></div></div><div id="Flight_Time"><div id="Departing_Time"><b>'+dept_time+'</b></div><div id="Duration"><b>'+duration+'</b></div><div id="Arrival_Time"><b>'+arrival_time+'</b></div></div><div id="Lower_Section"><div><b>Price:'+price+'</b></div><div><button id ="Purchase"><b>Book</b></button></div></div></div>';  departure = 'Cleveland'; destination = "Cairo"; dept_time = "4:00 am"; arrival_time = "2:24 pm";
+    //   price="$800"; airline = "Egypt Air", duration="10 hours and 24 minutes", Flight_ID ="fn4rf34593";
+    //   for(var i = 0; i < 5; ++i){
+    //     document.getElementById("Flight_Elements").innerHTML +='<div class="Flight_Data"><div id="Upper_Section"><div id="Airline"><b>Airline:'+airline+'</b></div><div id="Flight_ID"><b>Flight ID:'+Flight_ID+'</b></div></div><div id="Middle_Section"><div id="Dearture"><b>Departing from:'+departure+' </b></div> <div if="Flight_Icon"><img src="Flight_Icon.png" style="width:300px; height:auto;" /></div><div id="Destination"><b>Destination:'+destination+'</b></div></div><div id="Flight_Time"><div id="Departing_Time"><b>'+dept_time+'</b></div><div id="Duration"><b>'+duration+'</b></div><div id="Arrival_Time"><b>'+arrival_time+'</b></div></div><div id="Lower_Section"><div><b>Price:'+price+'</b></div><div><button id ="Purchase"><b>Book</b></button></div></div></div>';
+    
+    //   }
+    //   document.getElementById("Flight_Elements").innerHTML += '<div><button class="Page_buttons">1</button><button class="Page_buttons">2</button><button class="Page_buttons">3</button></div>';
+    // } 
+    
+    function clearInputs(){
+      document.getElementById("Departure").value = null;
+      document.getElementById("Arrival").value   = null;
+      document.getElementById("Date").value      = null;
+    }
+    function displayMenu(elementName, displayValue){
+      document.getElementById(elementName).style.display= displayValue;
+    }
+    function closeWindow(elementName){
+      
+      document.getElementById(elementName).style.display = "none";
+    }
+    function displayQuery(str){
+      var output = document.getElementById("QueryContent");
+      switch (str){
+        case 'Employees':
+          output.innerHTML = '<form id="User_Form"><div><lable><h4 style="display:inline;">Enter Flight Number:</h4></lable><input type="text" id="Flight_ID"/></div><div><input type="submit" id="submit" onclick=\'displayQuery("Employee_Flight");\' /></div></form>';
+        break;
+        case 'Airlines':
+          output.innerHTML = requestAirlines(output);
+        break;
+        case 'Passenger_Info':
+          output.innerHTML = '<form id="User_Form"><div><lable><h4 style="display:inline;">Enter Flight Number:</h4></lable><input type="text" id="Flight_ID"/></div><div><input type="submit" id="submit" onclick=\'displayQuery("Passangers_On_Flight");\' /></div></form>';
+        break;
+        case "Passangers_On_Flight":
+         output.innerHTML = requestFlights(output, Flight_ID.value);
+        break;
+        case "Employee_Flight":
+          output.innerHTML = GetEmployeeFlight(output, Flight_ID.value);
+        break;
+        case "FightsPerDay":
+          output.innerHTML = '<form id="User_Form"><div><lable><h4 style="display:inline;">Enter Date To Search:</h4></lable><input type="text" id="FlightsDate"/></div><div><input type="submit" id="submit" onclick=\'displayQuery("Get_Flight_Per_Day");\' /></div></form>';
+        break;
+        case "Get_Flight_Per_Day":
+          output.innerHTML = requestFlightsPerDay(output, FlightsDate.value);
+          break;
+        case "Planes":
+          output.innerHTML = requestPlanes(output);
+          break;
+        case "Airports":
+          output.innerHTML = requestAirports(output);
+          break;
+        case "Transactions":
+          output.innerHTML = requestTransactions(output);
+        break;
+      }
+    }
+    // Click on the first tablink on load
+    document.getElementsByClassName("tablink")[0].click();
+
+    function requestTransactions(output){
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        output.innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "process.php?q=Transactions");
+      xhttp.send();
+    }
+    function requestAirports(output){
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        output.innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "process.php?q=AirPorts");
+      xhttp.send();
+    }
+    function requestPlanes(output){
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        output.innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "process.php?q=Planes");
+      xhttp.send();
+    }
+    function requestFlightsPerDay(output, FlightsDate){
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        output.innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "process.php?q=FlightsOnDate&Date="+FlightsDate);
+      xhttp.send();
+    }
+    function requestEmployees(output){
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        //output.innerHTML = this.responseText;
+        output.innerHTML = "here";
+      }
+      xhttp.open("GET", "process.php?q=Employees");
+      xhttp.send();
+    }
+
+    function requestAirlines(output){
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        output.innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "process.php?q=Airlines");
+      xhttp.send();
+    }
+    function GetEmployeeFlight(output, Flight_ID){
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        output.innerHTML = this.responseText;
+        
+      }
+      
+      xhttp.open("GET", "process.php?q=Employees&flight_id="+Flight_ID);
+      xhttp.send();
+    }
+    function requestFlights(output, Flight_ID){
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        output.innerHTML = this.responseText;
+        //output.innerHTML = "<h1>Here</h1>";
+      }
+      //output.innerHTML = "<h1>Here</h1>";
+      xhttp.open("GET", "process.php?q=Passengers_On_Flight&flight_id="+Flight_ID);
+      xhttp.send();
+    }
+    </script>
+</body>

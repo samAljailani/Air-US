@@ -1,0 +1,193 @@
+<head >
+    <title>AirUs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./Icon.png"/>
+    <link rel="stylesheet" href="./Home.css" />
+
+    <link rel="stylesheet" href="./Home.css" />
+    <style>
+    #Info_Background{
+        
+        display:flex;
+        justify-content:space-evenly;
+    
+        align-items: center;
+        margin:0;
+        top:0;
+        left:0;
+        background-color: rgba(0, 0, 0, 0.801);
+        width:100%;
+        height:100%;
+        
+    }
+    #Info_Window{
+    
+    display:flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items:center;
+    width:600px;;
+    height: fit-content;
+    margin:0;
+    padding: 0 20px;
+    background-color:#fff;
+    border-radius: 5px;
+    /* margin-top:300px;
+    margin-left:300px; */
+    }
+    #Info{
+        display:flex;
+    flex-flow: row wrap;
+    height: fit-content;
+    width:inherit;
+    align-items: center;
+    justify-content:space-around;
+    }
+    #Info  div{
+    display:flex;
+    
+    justify-content: space-between;
+    width:49%;
+    margin: 15px 0;
+    
+    }
+    #submit{
+    border-radius:5px;
+    border-color:transparent;
+    background-color: orangered;
+    color:white;
+    cursor: pointer;
+    margin:20px 0;
+    padding:5px;
+    font-size:15px
+    }
+    </style>
+    
+    </head>
+    <body style="background-color:#fff; margin:0;">
+        <div id="Info_Background" >
+            <div id="Info_Window">
+                
+              <div id="Info" >
+                <div>
+                    <label>Flight Id: </label>
+                    <input type="text" placeholder="flight id" id="FlightId"/>
+                </div>
+                <div>
+
+                    <label>Email: </label>
+                    <input type="text" placeholder="Email" id="Email"/>
+                </div>
+                <div>
+                    <label>First Name: </label>
+                    <input type="text" placeholder="First Name" id="FirstName"/>
+                </div>
+
+                <div>
+                    <label>last Name: </label>
+                    <input type="text" placeholder="Password" id="LastName"/>
+                </div>
+                <div>
+                    <label>Address: </label>
+                    <input type="text" placeholder="Address" id="Address"/>
+                </div>
+                <div>
+                    <label>State: </label>
+                    <input type="text" placeholder="State" id="State"/>
+                </div>
+                <div>
+                    <label>Country: </label>
+                    <input type="text" placeholder="Country" id="Country"/>
+                </div>
+                <div>
+                    <label>City: </label>
+                    <input type="text" placeholder="City" id="City"/>
+                </div>
+                <div>
+                    <label>Zip Code: </label>
+                    <input type="text" placeholder="Zip Code" id="Zip"/>
+                </div>
+                <div>
+                    <label>Card number: </label>
+                    <input type="text" placeholder="Card number" id="CardNum"/>
+                </div>
+                <div>
+                    <label>Expiratoin date: </label>
+                    <input type="text" placeholder="yyyy-mm" id="Expr"/>
+                </div>
+                <div>
+                    <label>CVV: </label>
+                    <input type="text" placeholder="CVV" id="Cvv"/>
+                </div>
+                <div style="display:flex; width:100%;">
+                    <input type="radio" id="classes" name="classes" value="Economy" >
+                    <label for="html">Economy</label><br>
+                    <input type="radio" id="classes2" name="classes" value="Premium Economy" checked>
+                    <label for="javascript">PremiumEconomy</label>
+                    <input type="radio" id="claesses3" name="classes" value="Business">
+                    <label for="css">Business</label><br>
+                    <input type="radio" id="claesses4" name="classes" value="First Class">
+                    <label for="css">FirstClass</label><br>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; width:100%;">
+                    
+                    <input style="margin-bottom: 15px;"type="radio" id="classes" name="baggage" value="Carry-On" >
+                    <label style="margin-right: 15px;" for="html">Carry-On</label><br>
+                    <input style="margin-bottom: 15px;"type="radio" id="classes2" name="baggage" value="One Checked Bag" checked>
+                    <label style="margin-right: 15px;" for="javascript">One Checked Bag</label>
+                    <input style="margin-bottom: 15px;"type="radio" id="claesses3" name="baggage" value="Overweight/Oversized Bag">
+                    <label style="margin-right: 15px;" for="css">Overweight</label><br>
+                    <input style="margin-bottom: 15px;"type="radio" id="claesses4" name="baggage" value="Pet in Cabin">
+                    <label style="margin-right: 15px;" for="css">Pet in Cabin</label><br>
+                    <input style="margin-bottom: 15px; "type="radio" id="classes" name="baggage" value="Pet in Cargo" >
+                    <label style="margin-right: 15px;" for="html">Pet in Cargo</label><br>
+                    <input style="margin-bottom: 15px;"type="radio" id="classes2" name="baggage" value="Three Checked Bags" >
+                    <label style="margin-right: 15px;" for="javascript">Three Checked Bags</label>
+                    <input style="margin-bottom: 15px;"type="radio" id="claesses3" name="baggage" value="Two Checked Bags">
+                    <label style="margin-right: 15px;" for="css">Two Checked Bags</label><br>
+
+                </div>
+                
+              </div> 
+              <div style=" width:fit-content;">
+                <button id="submit"  onclick="sendPassangerInfo();" >Submit</button>
+            </div>
+
+            
+            </div>
+          </div> 
+          <script>
+              function sendPassangerInfo(){
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    // document.location="./index.html";
+                document.location= './index.html';
+            
+                }
+                
+                var passengerClass = document.getElementsByName('classes');
+                var i = 0;
+                while(i < passengerClass.length){
+                    if(passengerClass[i].checked){
+                        break;
+                    }
+                    ++i;
+                }
+                var passengerbaggage = document.getElementsByName('baggage');
+                var j = 0;
+                while(j < passengerbaggage.length){
+                    if(passengerbaggage[j].checked){
+                        break;
+                    }
+                    ++j;
+                }
+               
+                
+                xhttp.open("GET", "./process.php?q=PassengerInfo&Class="+passengerClass[i].value+"&baggage=" + passengerbaggage[j].value+"&flight_id="+ FlightId.value + "&Email="+Email.value+"&FirstName="+ FirstName.value +"&LastName="+LastName.value + "&Address="+Address.value +"&Country="+Country.value+"&State="+State.value+ "&City="+City.value+"&Zip="+Zip.value+"&CardNum="+CardNum.value+"&Expr="+Expr.value+"&CVV="+Cvv.value);
+                xhttp.send();
+
+              }
+          </script>
+    </body>
