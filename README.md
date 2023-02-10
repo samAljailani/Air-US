@@ -1,6 +1,6 @@
 # Air-US
 Air-Us is faux airline website where users can book flights and view data regarding airlines, planes, airports, flights, passengers, and employees. This website demonstrates the use of a Mysql Database that was populated with real-world data extracted from the R package nycflights13. 
-# Database ER Diagram Notations: 
+## Database ER Diagram Notations: 
 
  ![image](https://user-images.githubusercontent.com/90655361/217896345-5e9c361e-b871-4c41-a441-d82e81d34cb0.png)
  
