@@ -4,18 +4,18 @@ Air-Us is faux airline website where users can book flights and view data regard
 
  ![image](https://user-images.githubusercontent.com/90655361/217896345-5e9c361e-b871-4c41-a441-d82e81d34cb0.png)
  
-# Database ER Diagram:
+## Database ER Diagram:
 
 ![image](https://user-images.githubusercontent.com/90655361/217896805-e39f4b72-66e0-4c77-b04d-cbdf9bcb5120.png)
 
-# Database Schema:
+## Database Schema:
 
 ![image](https://user-images.githubusercontent.com/90655361/217896989-27fd17d9-b5f9-429d-b41d-09d7131b6e1c.png)
 
 
-# Website UI:
+## Website UI:
 
-## Customer UI: 
+### Customer UI: 
 
 ![image](https://user-images.githubusercontent.com/90655361/217897226-c46ae26c-3a22-4b91-a857-bf08242ca458.png)
 
@@ -25,7 +25,7 @@ Air-Us is faux airline website where users can book flights and view data regard
 ![image](https://user-images.githubusercontent.com/90655361/217897497-753f83b8-75bf-4880-a7b5-da57117553c8.png)
 
 
-## Admin Page:
+### Admin Page:
 
 ![image](https://user-images.githubusercontent.com/90655361/217897619-151bd0a7-8723-45a6-89fe-a2d25d983ece.png)
 
